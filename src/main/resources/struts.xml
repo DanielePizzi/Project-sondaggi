@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+        "-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+        "http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<constant name="struts.enable.DynamicMethodInvocation" value="false" />
+	<constant name="struts.devMode" value="true" />
+
+	<package name="action" extends="struts-default">
+
+		<default-action-ref name="index" />
+
+		<action name="login" class="action.ActionLogin" method="execute">
+			<result name="success">HomePageUser.jsp </result>
+			<result name="failure">LoginError.jsp</result>
+		</action>
+
+		<action name="register" class="action.ActionRegister" method="execute">
+			<result name="success">successRegistration.jsp</result>
+			<result name="failure">errorRegistration.jsp</result>
+		</action>
+
+		<action name="getCategory" class="action.ActionGetCategory"
+			method="execute">
+			<result name="success"> /Register.jsp </result>
+		</action>
+
+		<action name="categorieESondaggi" class="action.ActionGetCategory"
+			method="execute">
+			<result name="success"> /CategorieAdministrator.jsp </result>
+		</action>
+
+		<action name="addCategory" class="action.ActionAddCategory"
+			method="execute">
+			<result name="success"> /successAddCategory.jsp </result>
+			<result name="failure"> /errorExistCategory.jsp </result>
+		</action>
+
+		<action name="newNameCategory" class="action.ActionModifyCategory"
+			method="execute">
+			<result name="success"> /ModificaCategoria.jsp </result>
+		</action>
+
+		<action name="modifyCategory" class="action.ActionModifyCategory"
+			method="modify">
+			<result name="success"> /successModifyCategory.jsp </result>
+			<result name="failure"> /errorExistCategory.jsp </result>
+		</action>
+
+		<action name="getSurvey" class="action.ActionGetSurvey" method="execute">
+			<result name="success"> /SurveyAdministrator.jsp </result>
+		</action>
+
+		<action name="removeCategory" class="action.ActionRemoveCategory"
+			method="execute">
+			<result name="success"> /successRemoveCategory.jsp </result>
+		</action>
+
+		<action name="getQuestion" class="action.ActionGetQuestion"
+			method="execute">
+			<result name="success"> /QuestionAdministrator.jsp </result>
+		</action>
+
+		<action name="newNameSurvey" class="action.ActionModifySurvey"
+			method="execute">
+			<result name="success"> /ModificaSondaggio.jsp </result>
+		</action>
+
+		<action name="modifySurvey" class="action.ActionModifySurvey"
+			method="modify">
+			<result name="success"> /successModifySurvey.jsp </result>
+			<result name="failure"> /errorExistSurvey.jsp </result>
+		</action>
+
+		<action name="removeSurvey" class="action.ActionRemoveSurvey"
+			method="execute">
+			<result name="success"> /successRemoveSurvey.jsp </result>
+		</action>
+
+		<action name="addSurvey" class="action.ActionAddSurvey" method="execute">
+			<result name="success"> /AggiungiSondaggio.jsp </result>
+		</action>
+
+
+		<action name="addSurvey2" class="action.ActionAddSurvey"
+			method="execute2">
+			<result name="success"> /AggiungiDomanda.jsp </result>
+			<result name="failure"> /errorExistSurvey.jsp </result>
+		</action>
+
+		<action name="addQuestionSiNo" class="action.ActionAddQuestionSiNo"
+			method="execute">
+			<result name="success"> /AggiungiDomandaSiNo.jsp </result>
+		</action>
+
+		<action name="addQuestionSiNo2" class="action.ActionAddQuestionSiNo"
+			method="execute2">
+			<result name="success">/AggiungiDomanda.jsp </result>
+		    <result name="failure">/ErroreDomandaEsistente.jsp </result>
+		</action>
+
+		<action name="addQuestionMultiple" class="action.ActionAddQuestionMultiple"
+			method="execute">
+			<result name="success">/AggiungiDomandaMultipla.jsp </result>
+
+		</action>
+
+		<action name="addQuestionMultiple2" class="action.ActionAddQuestionMultiple"
+			method="execute2">
+			<result name="success">/AggiungiDomanda.jsp </result>
+			<result name="failure">/ErroreDomandaEsistente.jsp </result>
+		</action>
+
+		<action name="getAllCategoryUser" class="action.ActionGetCategoryUser"
+			method="execute">
+			<result name="success">/CategoryUser.jsp </result>
+		</action>
+
+		<action name="getAllSurveyUser" class="action.ActionGetSurveyUser"
+			method="execute">
+			<result name="success">/SurveyUser.jsp </result>
+		</action>
+
+		<action name="getQuestionUser" class="action.ActionGetQuestionUser"
+			method="execute">
+			<result name="success">/QuestionUser.jsp </result>
+		</action>
+
+		<action name="loginadmin" class="action.ActionLoginAdmin"
+			method="execute">
+			<result name="success"> HomePageAdministrator.jsp</result>
+			<result name="failure">LoginError.jsp</result>
+		</action>
+
+
+		<action name="modifypass" class="action.ActionModifyProfile"
+			method="modPsw">
+			<result name="success">ModifyProfileSuccess.jsp</result>
+			<result name="failure">ModifyProfileError.jsp</result>
+		</action>
+
+		<action name="modifyemail" class="action.ActionModifyProfile"
+			method="modEmail">
+			<result name="success">ModifyProfileSuccess.jsp</result>
+			<result name="failure">ModifyProfileError.jsp</result>
+		</action>
+
+		<action name="removeQuestion" class="action.ActionRemoveQuestion"
+			method="execute">
+			<result name="success">successRemoveQuestion.jsp</result>
+		</action>
+
+
+		<action name="addQuestion" class="action.ActionAddQuestion"
+			method="execute">
+			<result name="success"> /AggiungiDomanda.jsp </result>
+		</action>
+
+		<action name="getAnswer" class="action.ActionGetAnswer" method="execute">
+			<result name="success"> /AnswerAdministrator.jsp </result>
+		</action>
+
+
+
+
+	</package>
+
+	<!-- Add addition packages and configuration here. -->
+</struts>
